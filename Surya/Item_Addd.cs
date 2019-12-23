@@ -94,7 +94,7 @@ namespace Surya
             try
             {
                 OpenFileDialog openFileDialog1 = new OpenFileDialog();
-                openFileDialog1.Filter = "Image files | *.jpg";
+                openFileDialog1.Filter = "*.jpg";
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     metroLabel4.Text = openFileDialog1.FileName;
@@ -135,7 +135,7 @@ namespace Surya
             metroLabel4.Text = folder;
             System.Drawing.Image imageFile = System.Drawing.Image.FromFile(folder);
             pictureBox1.Image = imageFile;
-            metroLabel4.Text = "";
+//            metroLabel4.Text = "";
             this.Focus();
 
         }

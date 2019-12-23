@@ -16,6 +16,8 @@ using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Common;
 using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Net;
+using System.Diagnostics;
 
 namespace Surya
 {
@@ -835,6 +837,69 @@ namespace Surya
                 releaseObject(xlApp);
                 MetroMessageBox.Show(this, "\nIMPORT SUCCESSFULLY COMPLETED!", "CONGRATULATIONS", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        } 
+        }
+
+        private void metroButton11_Click(object sender, EventArgs e)
+        {
+            MySqlConnection con = new MySqlConnection("SERVER=localhost;DATABASE=SilverCity;UID=root;PASSWORD=smhs;");
+            con.Open();
+            string CmdString = "INSERT INTO Item(code, size, pic, descrip,cate) VALUES(@FirstName, @LastName, @Image, @Address,@cat)";
+            MySqlCommand cmd = new MySqlCommand(CmdString, con);
+
+            MySqlConnection onlineConnection = new MySqlConnection("SERVER=162.241.151.30;DATABASE=silvesa6_silverapp;UID=silvesa6_master;PASSWORD=Mastermac@007;");
+            onlineConnection.Open();
+            string commandString = "Select itemno, ringsize, stonesize, description, itemtypecode from product";
+            MySqlCommand command = new MySqlCommand(commandString, onlineConnection);
+            var dataReader = command.ExecuteReader();
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+               | SecurityProtocolType.Tls11
+               | SecurityProtocolType.Tls12
+               | SecurityProtocolType.Ssl3;
+            while (dataReader.Read())
+            {
+                string code = dataReader.GetValue(0).ToString();
+                cmd.Parameters.AddWithValue("@FirstName", code);
+                if(dataReader.GetValue(1).ToString().Length>0)
+                    cmd.Parameters.AddWithValue("@LastName", dataReader.GetValue(1).ToString());
+                else
+                    cmd.Parameters.AddWithValue("@LastName", dataReader.GetValue(2).ToString());
+
+                cmd.Parameters.AddWithValue("@Image", GetImageData(code));
+                cmd.Parameters.AddWithValue("@Address", dataReader.GetValue(3).ToString());
+                cmd.Parameters.AddWithValue("@cat", dataReader.GetValue(4).ToString());
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
+            }
+            con.Close();
+        }
+
+        private byte[] GetImageData(string code)
+        {
+            string someUrl = "https://www.silvercityonline.com/stock/pics/"+code+".JPG";
+            byte[] ImageData = new byte[] { 0x20 };
+            FileStream fs;
+            BinaryReader br;
+
+            string folder = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            folder = folder.Substring(0, folder.Length - 10) + @"\Resources\default.jpg";
+            fs = new FileStream(folder, FileMode.Open, FileAccess.Read);
+            br = new BinaryReader(fs);
+            ImageData = br.ReadBytes((int)fs.Length);
+
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    byte[] imageBytes = webClient.DownloadData(someUrl);
+                    if (imageBytes.Length > 0)
+                        ImageData = imageBytes;
+                }
+                catch (Exception e)
+                {
+                }
+            }
+            return ImageData;
+        }
     }
 }
