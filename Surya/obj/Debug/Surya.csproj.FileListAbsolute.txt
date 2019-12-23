@@ -1,0 +1,120 @@
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\bin\Debug\Surya.exe.config
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\bin\Debug\Surya.exe
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\bin\Debug\Surya.pdb
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\bin\Debug\itextsharp.dll
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\bin\Debug\itextsharp.pdfa.dll
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\bin\Debug\itextsharp.xtra.dll
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\bin\Debug\MetroFramework.Design.dll
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\bin\Debug\MetroFramework.dll
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\bin\Debug\itextsharp.xml
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\bin\Debug\MetroFramework.Design.pdb
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.EditStock.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Form1.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Home.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Login.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Mbox_Search.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Properties.Resources.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.csproj.GenerateResource.Cache
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.exe
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.pdb
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Add_Stock.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.All_Stock.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Search_Result.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Buyer_Add.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Estimate.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Bill.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Return_Item.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Buyer_List.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Print_Pic.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Cash_Depo.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Stats.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.exe.licenses
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.Set.resources
+C:\Users\m1\Documents\Visual Studio 2012\Projects\Surya\Surya\obj\Debug\Surya.csprojResolveAssemblyReference.cache
+C:\Users\m1\Desktop\Surya\Surya\bin\Debug\Surya.exe.config
+C:\Users\m1\Desktop\Surya\Surya\bin\Debug\Surya.exe
+C:\Users\m1\Desktop\Surya\Surya\bin\Debug\Surya.pdb
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.csprojResolveAssemblyReference.cache
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Add_Stock.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.All_Stock.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Bill.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Buyer_Add.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Buyer_List.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Cash_Depo.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.EditStock.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Estimate.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Form1.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Home.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Login.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Mbox_Search.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Print_Pic.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Properties.Resources.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Return_Item.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Search_Result.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.Set.resources
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.csproj.GenerateResource.Cache
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.exe.licenses
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.exe
+C:\Users\m1\Desktop\Surya\Surya\obj\Debug\Surya.pdb
+C:\Users\m1\Desktop\Brokery\Surya\bin\Debug\Brokery.exe.config
+C:\Users\m1\Desktop\Brokery\Surya\bin\Debug\Brokery.exe
+C:\Users\m1\Desktop\Brokery\Surya\bin\Debug\Brokery.pdb
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.csproj.ResolveComReference.cache
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.Add_Stock.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.All_Stock.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.Buyer_Add.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.Buyer_List.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.Cash_Depo.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.EditStock.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.Form1.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.Home.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.invent.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.Login.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.Mbox_Search.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Brokery.Properties.Resources.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.Return_Item.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.Search_Result.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.Seller_Add.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.Set.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.Transaction.resources
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Surya.csproj.GenerateResource.Cache
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Brokery.exe.licenses
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Brokery.exe
+C:\Users\m1\Desktop\Brokery\Surya\obj\Debug\Brokery.pdb
+C:\Users\m1\Desktop\Sales-Purchase\Surya\bin\Debug\RAP_Change.resx
+C:\Users\m1\Desktop\Sales-Purchase\Surya\bin\Debug\RAP_Change.cs
+C:\Users\m1\Desktop\Sales-Purchase\Surya\bin\Debug\RAP_Change.Designer.cs
+C:\Users\m1\Desktop\Sales-Purchase\Surya\bin\Debug\Bhandari_Diamonds.exe.config
+C:\Users\m1\Desktop\Sales-Purchase\Surya\bin\Debug\Bhandari_Diamonds.exe
+C:\Users\m1\Desktop\Sales-Purchase\Surya\bin\Debug\Bhandari_Diamonds.pdb
+C:\Users\m1\Desktop\Sales-Purchase\Surya\bin\Debug\MySql.Data.dll
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.csproj.ResolveComReference.cache
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.Add_Stock.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.all_invent.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.All_Stock.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.Buyer_Add.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.Buyer_List.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.Cash_Depo.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.EditStock.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.Form1.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.Home.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.invent.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.Login.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.Mbox_Search.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.Properties.Resources.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.rapchange.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.Return_Item.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.Search_Result.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.Seller_Add.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.Set.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.Transaction.resources
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.csproj.GenerateResource.Cache
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Bhandari_Diamonds.exe.licenses
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Bhandari_Diamonds.exe
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Bhandari_Diamonds.pdb
+C:\Users\m1\Desktop\Sales-Purchase\Surya\bin\Debug\MySqlBackup.dll
+C:\Users\m1\Desktop\Sales-Purchase\Surya\obj\Debug\Surya.csprojResolveAssemblyReference.cache
+C:\Users\m1\Desktop\SilverCity\Surya\bin\Debug\Bhandari_Diamonds.exe.config
+C:\Users\m1\Desktop\SilverCity\Surya\obj\Debug\Surya.csproj.ResolveComReference.cache
+C:\Users\m1\Desktop\SilverCity\Surya\obj\Debug\Bhandari_Diamonds.exe
+C:\Users\m1\Desktop\SilverCity\Surya\obj\Debug\Bhandari_Diamonds.pdb

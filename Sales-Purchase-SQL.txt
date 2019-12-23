@@ -1,0 +1,116 @@
+create database silvercity;
+use silvercity;
+
+CREATE TABLE metal(
+	mid int(10) Primary Key auto_increment,
+	dat date not null,
+	type varchar(30) not null,
+	name varchar(80) not null,
+	qty numeric(10,3) not null,
+	unit varchar(20) not null,
+	amt numeric(10,2) not null,
+	purity varchar(20) not null,
+	rate numeric(10,2) not null,
+	prodtype varchar(20) not null);
+
+
+CREATE TABLE item(
+	itemid int primary key auto_increment,
+	code varchar(100),
+	pic mediumblob,
+	size varchar(300),
+	descrip varchar(400),
+	cate varchar(100));
+
+
+
+CREATE TABLE ledger(
+	led_id int(10) primary key auto_increment, 
+	table_name varchar(20) not null, 
+	code varchar(20), 
+	sil_rt numeric(8,2) default 0, 
+	br_rt numeric(8,2) default 0, 
+	lab_rt numeric(8,2) default 0, 
+	set_wt numeric(8,2) default 0, 
+	gold_rt numeric(8,2) default 0, 
+	silplate_rt numeric(8,2) default 0, 
+	pro_rt numeric(4,2) not null default 0,
+	ta_r int(10) not null default 0, 
+	pg_r int(10) not null default 0, 
+	pg_u numeric(8,2) not null default 0, 
+	pp_u numeric(8,2) not null default 0, 
+	ta_u  numeric(8,2) not null default 0);
+
+
+CREATE TABLE metal_consume(
+	cid int(10) Primary Key auto_increment,
+	dat date not null,
+	type varchar(30) not null,
+	name varchar(80) not null,
+	qty numeric(10,3) not null,
+	unit varchar(20) not null,
+	purity varchar(20) not null,
+	prodtype varchar(20) not null);
+
+
+CREATE TABLE Stone(
+	Lot numeric(10,1) Primary Key,
+	Dop Date not null,
+	Stone varchar(50) Not Null,
+	Size varchar(30) Not Null,
+	Shape varchar(100) Not Null,
+	Seller varchar(70) Not Null,
+	p_pcs int(7) not null,
+	p_qty numeric(10,2) not null,
+	p_unit varchar(10) not null,
+	c_pcs int(7) not null,
+	c_qty numeric(10,2) not null,
+	c_unit varchar(10) not null,
+	cost numeric(10,2) not null,
+	less numeric(4,2) not null,
+	nr numeric(10,2) not null,
+	amt numeric(10,2) not null,
+	cr_amt numeric(10,2) not null,
+	specs varchar(200) not null,
+	ec int(4) DEFAULT 0 );
+
+
+
+create database login;
+use login;
+create table log(user varchar(50) not null, pass varchar(50) not null);
+insert into log values('boss','boss');
+insert into log values('employ','employ');
+
+
+
+
+
+
+
+CREATE TABLE item(
+	itemid int primary key auto_increment,
+	code varchar(20),
+	pic mediumblob,
+	size varchar(20),
+	descrip varchar(200));
+
+
+
+
+
+
+
+
+
+
+---------------------------
+
+---------------------------
+UPDATE inv_1 set nc_i=((metwt*22)+(stones*2)+(((wt*0.2) + metwt)*(3))+subtot)*(1+(0.01*5)), nc_u=(((metwt*22)+(stones*2)+(((wt*0.2) + metwt)*(3))+subtot)*(1+(0.01*5))/exchg_rate)*1.1 ;
+---------------------------
+OK   
+---------------------------
+
+
+

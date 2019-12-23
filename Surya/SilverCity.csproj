@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E9EC7A9-FC58-4BA3-B4CB-07E8548FC763}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Surya</RootNamespace>
+    <AssemblyName>SilverCity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Bejeweled.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\..\..\..\Downloads\Compressed\winforms-modernui-master\winforms-modernui-master\MetroFramework.Fonts\bin\Release\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\..\..\..\..\Downloads\Compressed\winforms-modernui-master\winforms-modernui-master\MetroFramework.Design\bin\Release\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.SqlServer.SmoExtended.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.7\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySqlBackup, Version=2.0.9.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlBackup.NET.2.0.9.2\lib\net45\MySqlBackup.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add_Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Stock.Designer.cs">
+      <DependentUpon>Add_Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="all_invent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="all_invent.Designer.cs">
+      <DependentUpon>all_invent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="All_Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="All_Stock.Designer.cs">
+      <DependentUpon>All_Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buyer_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buyer_Add.Designer.cs">
+      <DependentUpon>Buyer_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buyer_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buyer_List.Designer.cs">
+      <DependentUpon>Buyer_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cash_Depo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cash_Depo.Designer.cs">
+      <DependentUpon>Cash_Depo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseClass.cs" />
+    <Compile Include="EditStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditStock.Designer.cs">
+      <DependentUpon>EditStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="invent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="invent.Designer.cs">
+      <DependentUpon>invent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item_Addd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item_Addd.Designer.cs">
+      <DependentUpon>Item_Addd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="item_history.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="item_history.Designer.cs">
+      <DependentUpon>item_history.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item_list.Designer.cs">
+      <DependentUpon>Item_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="metal_invent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="metal_invent.Designer.cs">
+      <DependentUpon>metal_invent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mbox_Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mbox_Search.Designer.cs">
+      <DependentUpon>Mbox_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Metal_Consume.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Metal_Consume.Designer.cs">
+      <DependentUpon>Metal_Consume.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Metal_Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Metal_Purchase.Designer.cs">
+      <DependentUpon>Metal_Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Packing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Packing.Designer.cs">
+      <DependentUpon>Packing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pack_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pack_Item.Designer.cs">
+      <DependentUpon>Pack_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RAP_Change.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="RAP_Change.Designer.cs">
+      <DependentUpon>RAP_Change.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Return_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Return_Item.Designer.cs">
+      <DependentUpon>Return_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search_Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Result.Designer.cs">
+      <DependentUpon>Search_Result.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seller_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seller_Add.Designer.cs">
+      <DependentUpon>Seller_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Set.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Set.Designer.cs">
+      <DependentUpon>Set.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction.Designer.cs">
+      <DependentUpon>Transaction.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Add_Stock.resx">
+      <DependentUpon>Add_Stock.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="all_invent.resx">
+      <DependentUpon>all_invent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="All_Stock.resx">
+      <DependentUpon>All_Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buyer_Add.resx">
+      <DependentUpon>Buyer_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buyer_List.resx">
+      <DependentUpon>Buyer_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cash_Depo.resx">
+      <DependentUpon>Cash_Depo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditStock.resx">
+      <DependentUpon>EditStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="invent.resx">
+      <DependentUpon>invent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item_Addd.resx">
+      <DependentUpon>Item_Addd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="item_history.resx">
+      <DependentUpon>item_history.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item_list.resx">
+      <DependentUpon>Item_list.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="metal_invent.resx">
+      <DependentUpon>metal_invent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mbox_Search.resx">
+      <DependentUpon>Mbox_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Metal_Consume.resx">
+      <DependentUpon>Metal_Consume.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Metal_Purchase.resx">
+      <DependentUpon>Metal_Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Packing.resx">
+      <DependentUpon>Packing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pack_Item.resx">
+      <DependentUpon>Pack_Item.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAP_Change.resx">
+      <DependentUpon>RAP_Change.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Return_Item.resx">
+      <DependentUpon>Return_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_Result.resx">
+      <DependentUpon>Search_Result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seller_Add.resx">
+      <DependentUpon>Seller_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Set.resx">
+      <DependentUpon>Set.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction.resx">
+      <DependentUpon>Transaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bejeweled.ico" />
+    <None Include="Resources\nopic.bmp" />
+    <None Include="Resources\Recycle Bin Empty.png" />
+    <None Include="Resources\Google Blogger.jpg" />
+    <None Include="Resources\List_All_Stock.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\List All Stock.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
