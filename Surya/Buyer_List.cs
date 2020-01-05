@@ -93,10 +93,10 @@ namespace Surya
             int temp = 0;
             String path = "";
             if (this.Text.ToString().Equals("BUYER LIST"))
-                path = @"C:\Bhandari Soft\Files\BUYER LIST.xls";
+                path = @"C:\Bhandari Soft\Files\BUYER LIST.xlsx";
             else
             {
-                path = @"C:\Bhandari Soft\Files\SELLER LIST.xls";
+                path = @"C:\Bhandari Soft\Files\SELLER LIST.xlsx";
             }
             if (temp == 0)
             {
@@ -154,7 +154,7 @@ namespace Surya
                     }
                 }
 
-                xlWorkBook.SaveAs(path, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                xlWorkBook.SaveAs(path, Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
                 xlWorkBook.Close(true, misValue, misValue);
                 xlApp.Quit();
                 releaseObject(xlWorkSheet);

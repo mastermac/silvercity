@@ -31,6 +31,12 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.metroButton11 = new MetroFramework.Controls.MetroButton();
+            this.metroButton10 = new MetroFramework.Controls.MetroButton();
+            this.metroButton9 = new MetroFramework.Controls.MetroButton();
+            this.metroButton8 = new MetroFramework.Controls.MetroButton();
+            this.metroButton7 = new MetroFramework.Controls.MetroButton();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -49,16 +55,10 @@
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroButton6 = new MetroFramework.Controls.MetroButton();
             this.metroUserControl1 = new MetroFramework.Controls.MetroUserControl();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.metroButton10 = new MetroFramework.Controls.MetroButton();
-            this.metroButton9 = new MetroFramework.Controls.MetroButton();
-            this.metroButton8 = new MetroFramework.Controls.MetroButton();
-            this.metroButton7 = new MetroFramework.Controls.MetroButton();
-            this.metroButton11 = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
+            this.metroTabPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.metroTabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -74,11 +74,103 @@
             this.metroTabControl1.Location = new System.Drawing.Point(47, 134);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(872, 530);
             this.metroTabControl1.TabIndex = 2;
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTabControl1.UseSelectable = true;
+            // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.Controls.Add(this.metroButton11);
+            this.metroTabPage1.Controls.Add(this.metroButton10);
+            this.metroTabPage1.Controls.Add(this.metroButton9);
+            this.metroTabPage1.Controls.Add(this.metroButton8);
+            this.metroTabPage1.Controls.Add(this.metroButton7);
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.HorizontalScrollbarSize = 22;
+            this.metroTabPage1.Location = new System.Drawing.Point(10, 43);
+            this.metroTabPage1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(852, 477);
+            this.metroTabPage1.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroTabPage1.TabIndex = 2;
+            this.metroTabPage1.Text = "IMPORT DATA";
+            this.metroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.VerticalScrollbarSize = 23;
+            // 
+            // metroButton11
+            // 
+            this.metroButton11.Highlight = true;
+            this.metroButton11.Location = new System.Drawing.Point(54, 368);
+            this.metroButton11.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.metroButton11.Name = "metroButton11";
+            this.metroButton11.Size = new System.Drawing.Size(751, 51);
+            this.metroButton11.TabIndex = 20;
+            this.metroButton11.Text = "SYNC ITEMS WITH ONLINE DB";
+            this.metroButton11.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton11.UseSelectable = true;
+            this.metroButton11.UseStyleColors = true;
+            this.metroButton11.Click += new System.EventHandler(this.metroButton11_Click);
+            // 
+            // metroButton10
+            // 
+            this.metroButton10.Highlight = true;
+            this.metroButton10.Location = new System.Drawing.Point(54, 303);
+            this.metroButton10.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.metroButton10.Name = "metroButton10";
+            this.metroButton10.Size = new System.Drawing.Size(751, 51);
+            this.metroButton10.TabIndex = 19;
+            this.metroButton10.Text = "IMPORT ITEMS EXCEL FILE";
+            this.metroButton10.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton10.UseSelectable = true;
+            this.metroButton10.UseStyleColors = true;
+            this.metroButton10.Click += new System.EventHandler(this.metroButton10_Click);
+            // 
+            // metroButton9
+            // 
+            this.metroButton9.Highlight = true;
+            this.metroButton9.Location = new System.Drawing.Point(54, 239);
+            this.metroButton9.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.metroButton9.Name = "metroButton9";
+            this.metroButton9.Size = new System.Drawing.Size(751, 51);
+            this.metroButton9.TabIndex = 18;
+            this.metroButton9.Text = "IMPORT METAL USED EXCEL FILE";
+            this.metroButton9.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton9.UseSelectable = true;
+            this.metroButton9.UseStyleColors = true;
+            this.metroButton9.Click += new System.EventHandler(this.metroButton9_Click_1);
+            // 
+            // metroButton8
+            // 
+            this.metroButton8.Highlight = true;
+            this.metroButton8.Location = new System.Drawing.Point(54, 174);
+            this.metroButton8.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.metroButton8.Name = "metroButton8";
+            this.metroButton8.Size = new System.Drawing.Size(751, 51);
+            this.metroButton8.TabIndex = 17;
+            this.metroButton8.Text = "IMPORT METAL PURCHASE EXCEL FILE";
+            this.metroButton8.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton8.UseSelectable = true;
+            this.metroButton8.UseStyleColors = true;
+            this.metroButton8.Click += new System.EventHandler(this.metroButton8_Click_1);
+            // 
+            // metroButton7
+            // 
+            this.metroButton7.Highlight = true;
+            this.metroButton7.Location = new System.Drawing.Point(54, 109);
+            this.metroButton7.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.metroButton7.Name = "metroButton7";
+            this.metroButton7.Size = new System.Drawing.Size(751, 51);
+            this.metroButton7.TabIndex = 16;
+            this.metroButton7.Text = "IMPORT STOCK INVENTORY EXCEL FILE";
+            this.metroButton7.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton7.UseSelectable = true;
+            this.metroButton7.UseStyleColors = true;
+            this.metroButton7.Click += new System.EventHandler(this.metroButton7_Click_1);
             // 
             // tabPage1
             // 
@@ -342,98 +434,6 @@
             this.metroUserControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroUserControl1.UseSelectable = true;
             // 
-            // metroTabPage1
-            // 
-            this.metroTabPage1.Controls.Add(this.metroButton11);
-            this.metroTabPage1.Controls.Add(this.metroButton10);
-            this.metroTabPage1.Controls.Add(this.metroButton9);
-            this.metroTabPage1.Controls.Add(this.metroButton8);
-            this.metroTabPage1.Controls.Add(this.metroButton7);
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 22;
-            this.metroTabPage1.Location = new System.Drawing.Point(10, 43);
-            this.metroTabPage1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(852, 477);
-            this.metroTabPage1.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroTabPage1.TabIndex = 2;
-            this.metroTabPage1.Text = "IMPORT DATA";
-            this.metroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 23;
-            // 
-            // metroButton10
-            // 
-            this.metroButton10.Highlight = true;
-            this.metroButton10.Location = new System.Drawing.Point(54, 303);
-            this.metroButton10.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.metroButton10.Name = "metroButton10";
-            this.metroButton10.Size = new System.Drawing.Size(751, 51);
-            this.metroButton10.TabIndex = 19;
-            this.metroButton10.Text = "IMPORT ITEMS EXCEL FILE";
-            this.metroButton10.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton10.UseSelectable = true;
-            this.metroButton10.UseStyleColors = true;
-            this.metroButton10.Click += new System.EventHandler(this.metroButton10_Click);
-            // 
-            // metroButton9
-            // 
-            this.metroButton9.Highlight = true;
-            this.metroButton9.Location = new System.Drawing.Point(54, 239);
-            this.metroButton9.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.metroButton9.Name = "metroButton9";
-            this.metroButton9.Size = new System.Drawing.Size(751, 51);
-            this.metroButton9.TabIndex = 18;
-            this.metroButton9.Text = "IMPORT METAL USED EXCEL FILE";
-            this.metroButton9.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton9.UseSelectable = true;
-            this.metroButton9.UseStyleColors = true;
-            this.metroButton9.Click += new System.EventHandler(this.metroButton9_Click_1);
-            // 
-            // metroButton8
-            // 
-            this.metroButton8.Highlight = true;
-            this.metroButton8.Location = new System.Drawing.Point(54, 174);
-            this.metroButton8.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.metroButton8.Name = "metroButton8";
-            this.metroButton8.Size = new System.Drawing.Size(751, 51);
-            this.metroButton8.TabIndex = 17;
-            this.metroButton8.Text = "IMPORT METAL PURCHASE EXCEL FILE";
-            this.metroButton8.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton8.UseSelectable = true;
-            this.metroButton8.UseStyleColors = true;
-            this.metroButton8.Click += new System.EventHandler(this.metroButton8_Click_1);
-            // 
-            // metroButton7
-            // 
-            this.metroButton7.Highlight = true;
-            this.metroButton7.Location = new System.Drawing.Point(54, 109);
-            this.metroButton7.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.metroButton7.Name = "metroButton7";
-            this.metroButton7.Size = new System.Drawing.Size(751, 51);
-            this.metroButton7.TabIndex = 16;
-            this.metroButton7.Text = "IMPORT STOCK INVENTORY EXCEL FILE";
-            this.metroButton7.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton7.UseSelectable = true;
-            this.metroButton7.UseStyleColors = true;
-            this.metroButton7.Click += new System.EventHandler(this.metroButton7_Click_1);
-            // 
-            // metroButton11
-            // 
-            this.metroButton11.Highlight = true;
-            this.metroButton11.Location = new System.Drawing.Point(54, 368);
-            this.metroButton11.Margin = new System.Windows.Forms.Padding(7);
-            this.metroButton11.Name = "metroButton11";
-            this.metroButton11.Size = new System.Drawing.Size(751, 51);
-            this.metroButton11.TabIndex = 20;
-            this.metroButton11.Text = "SYNC ITEMS WITH ONLINE DB";
-            this.metroButton11.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton11.UseSelectable = true;
-            this.metroButton11.UseStyleColors = true;
-            this.metroButton11.Click += new System.EventHandler(this.metroButton11_Click);
-            // 
             // Set
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -451,10 +451,10 @@
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.Set_Load);
             this.metroTabControl1.ResumeLayout(false);
+            this.metroTabPage1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.metroTabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

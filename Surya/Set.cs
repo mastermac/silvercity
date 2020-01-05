@@ -18,6 +18,7 @@ using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Net;
 using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace Surya
 {
@@ -843,41 +844,53 @@ namespace Surya
         {
             MySqlConnection con = new MySqlConnection("SERVER=localhost;DATABASE=SilverCity;UID=root;PASSWORD=smhs;");
             con.Open();
-            string CmdString = "INSERT INTO Item(code, size, pic, descrip,cate) VALUES(@FirstName, @LastName, @Image, @Address,@cat)";
+            string CmdString = "Select code from Item";
             MySqlCommand cmd = new MySqlCommand(CmdString, con);
-
-            MySqlConnection onlineConnection = new MySqlConnection("SERVER=162.241.151.30;DATABASE=silvesa6_silverapp;UID=silvesa6_master;PASSWORD=Mastermac@007;");
-            onlineConnection.Open();
-            string commandString = "Select itemno, ringsize, stonesize, description, itemtypecode from product";
-            MySqlCommand command = new MySqlCommand(commandString, onlineConnection);
-            var dataReader = command.ExecuteReader();
-            ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
-               | SecurityProtocolType.Tls11
-               | SecurityProtocolType.Tls12
-               | SecurityProtocolType.Ssl3;
-            while (dataReader.Read())
+            var dataReader1 = cmd.ExecuteReader();
+            List<string> localData = new List<string>();
+            if (dataReader1.Read())
             {
-                string code = dataReader.GetValue(0).ToString();
+                localData.Add(Convert.ToString(dataReader1[0]).ToLower());
+            }
+            dataReader1.Close();
+            var dataTable = new DataTable();
+
+            using (WebClient wc = new WebClient())
+            {
+                var json = wc.DownloadString("http://www.silvercityonline.com/stock/src/scripts/getAll.php?key=mastermac&table=product&columns=itemno,ringsize,stonesize,description,itemtypecode");
+                dataTable = (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
+            }
+            CmdString = "INSERT INTO Item(code, size, pic, descrip,cate) VALUES(@FirstName, @LastName, @Image, @Address,@cat)";
+            cmd = new MySqlCommand(CmdString, con);
+
+            var count = 0;
+            foreach(DataRow row in dataTable.Rows)
+            {
+                string code = row[0].ToString();
+                if (localData.Count>0 && localData.Where(x => x.Contains(code.ToLower()))!=null)
+                    continue;
                 cmd.Parameters.AddWithValue("@FirstName", code);
-                if(dataReader.GetValue(1).ToString().Length>0)
-                    cmd.Parameters.AddWithValue("@LastName", dataReader.GetValue(1).ToString());
+                if(row[1].ToString().Length>0)
+                    cmd.Parameters.AddWithValue("@LastName", row[1].ToString());
                 else
-                    cmd.Parameters.AddWithValue("@LastName", dataReader.GetValue(2).ToString());
+                    cmd.Parameters.AddWithValue("@LastName", row[2].ToString());
 
                 cmd.Parameters.AddWithValue("@Image", GetImageData(code));
-                cmd.Parameters.AddWithValue("@Address", dataReader.GetValue(3).ToString());
-                cmd.Parameters.AddWithValue("@cat", dataReader.GetValue(4).ToString());
+                cmd.Parameters.AddWithValue("@Address", row[3].ToString());
+                cmd.Parameters.AddWithValue("@cat", row[4].ToString());
                 cmd.ExecuteNonQuery();
                 cmd.Parameters.Clear();
+                count++;
             }
             con.Close();
+            MetroMessageBox.Show(this, "\nSYNCED "+count+" NEW ITEMS!", "CONGRATULATIONS", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private byte[] GetImageData(string code)
         {
             string someUrl = "https://www.silvercityonline.com/stock/pics/"+code+".JPG";
             byte[] ImageData = new byte[] { 0x20 };
+            return ImageData;
             FileStream fs;
             BinaryReader br;
 
@@ -900,6 +913,11 @@ namespace Surya
                 }
             }
             return ImageData;
+        }
+
+        private void metroLabel5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

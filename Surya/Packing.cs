@@ -17,6 +17,7 @@ namespace Surya
 {
     public partial class Packing : MetroForm
     {
+        private bool refreshRequired = true;
         public Packing()
         {
             InitializeComponent();
@@ -63,7 +64,12 @@ namespace Surya
             cmd.CommandText="insert into ledger(table_name, code) VALUES (@a,@b);";
             //MessageBox.Show(Query);
             cmd.Parameters.AddWithValue("@a", numericUpDown1.Text.ToString());
-            cmd.Parameters.AddWithValue("@b", metroComboBox6.SelectedItem.ToString());
+            string comboBox = "";
+            if (comboBox1.SelectedItem != null)
+                comboBox = comboBox1.SelectedItem.ToString();
+            else
+                comboBox = comboBox1.Text.ToString();
+            cmd.Parameters.AddWithValue("@b", comboBox);// metroComboBox6.SelectedItem.ToString());
             
             int result = cmd.ExecuteNonQuery();
             if (result > 0)
@@ -80,19 +86,28 @@ namespace Surya
             metroGrid2.Rows.Clear();
             metroGrid2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             metroGrid2.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            if(refreshRequired)
+                GetDistinctItems();
+        }
+
+        private void GetDistinctItems()
+        {
             MySqlConnection con1 = new MySqlConnection("SERVER=localhost;DATABASE=SilverCity;UID=root;PASSWORD=smhs;");
-            String q1 = "Select distinct code from item where code not in (select distinct code from ledger where table_name=\'"+numericUpDown1.Text.ToString()+"\');";
+            String q1 = "Select distinct code from item where code not in (select distinct code from ledger where table_name=\'" + numericUpDown1.Text.ToString() + "\');";
             MySqlCommand cmd1 = new MySqlCommand(q1, con1);
             con1.Open();
             var dataReader1 = cmd1.ExecuteReader();
             int count = 0;
             metroComboBox6.Items.Clear();
+            comboBox1.Items.Clear();
             while (dataReader1.Read())
             {
                 metroComboBox6.Items.Insert(count, dataReader1.GetValue(0));
+                comboBox1.Items.Insert(count, dataReader1.GetValue(0));
                 count++;
             }
             dataReader1.Close();
+            refreshRequired = false;
         }
 
         private void numericUpDown1_Leave(object sender, EventArgs e)
@@ -169,9 +184,15 @@ namespace Surya
                     MemoryStream ms = new MemoryStream();
                     Byte[] bindata;
                     bindata = (byte[])(dataReader1.GetValue(0));
+                Image imageFile;
+                if (bindata.Length > 10)
+                {
                     ms.Write(bindata, 0, bindata.Length);
-                    var imageFile = new Bitmap(ms);
-                    var ratioX = (double)100 / imageFile.Width;
+                    imageFile = new Bitmap(ms);
+                }
+                else
+                    imageFile = Helper.TryAndGetImage(dataReader1.GetValue(9).ToString());
+                var ratioX = (double)100 / imageFile.Width;
                     var ratioY = (double)100 / imageFile.Height;
                     var ratio = Math.Min(ratioX, ratioY);
                     var newWidth = (int)(imageFile.Width * ratio);
@@ -395,7 +416,7 @@ namespace Surya
         private void metroButton9_Click(object sender, EventArgs e)
         {
             
-            String path = @"C:\Silver City\Files\INV " + numericUpDown1.Text.ToString()+" "+metroDateTime1.Text + ".xls";
+            String path = @"C:\Silver City\Files\INV" + numericUpDown1.Text.ToString()+"_"+metroDateTime1.Text.Replace('/','-') + ".xlsx";
 
             Excel.Application xlApp;
             Excel.Workbook xlWorkBook;
@@ -446,13 +467,27 @@ namespace Surya
                 dataReader1 = cmd.ExecuteReader();
                 while (dataReader1.Read())
                 {
+                    if (String.IsNullOrEmpty(dataReader1.GetValue(5).ToString()))
+                        continue;
                     cou++;
                     //MessageBox.Show("Hey " + dataReader1.GetValue(1) + " Count = " + cou);
-                    xlWorkSheet.Cells[row, 2] = dataReader1.GetValue(5).ToString();
+                    xlWorkSheet.Cells[row, 2] = dataReader1.GetValue(5).ToString().ToUpper();
                     double pro = 0;
                         Byte[] bindata = (byte[])(dataReader1.GetValue(0));
-                        MemoryStream mStream = new MemoryStream(bindata);
-                        PictureBox p = new PictureBox();
+                    MemoryStream mStream = new MemoryStream();
+                    Image imageFile;
+                    if (bindata.Length <= 10)
+                    {
+                        imageFile = Helper.TryAndGetImage(dataReader1.GetValue(5).ToString());
+                        using (var ms = new MemoryStream())
+                        {
+                            imageFile.Save(ms, imageFile.RawFormat);
+                            bindata = ms.ToArray();
+                        }
+                    }
+                    mStream.Write(bindata, 0, bindata.Length);
+
+                    PictureBox p = new PictureBox();
                         p.Image = Image.FromStream(mStream);
                         p.Image.Save(@"C:\Silver City\Files\temp.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                     Excel.Range oRange = (Excel.Range)xlWorkSheet.Cells[row, 7];
@@ -534,13 +569,13 @@ namespace Surya
                             xlWorkSheet.Cells[row, 9] = dataReader2.GetValue(9);
                             xlWorkSheet.Cells[row, 10] = dataReader2.GetValue(10);
                             subt += Convert.ToDouble(dataReader2.GetValue(10));
-                            xlWorkSheet.Cells[row, 11] = "$ " + dataReader2.GetValue(11);
+                            xlWorkSheet.Cells[row, 11] = "₹ " + dataReader2.GetValue(11);
                             gl_amtr += Convert.ToDouble(dataReader2.GetValue(11));
                             gl_amtu += Convert.ToDouble(dataReader2.GetValue(12));
                             xlWorkSheet.Cells[row, 12] = "" + dataReader2.GetValue(12);
-                            xlWorkSheet.Cells[row, 13] = "$ " + dataReader2.GetValue(13);
+                            xlWorkSheet.Cells[row, 13] = "₹ " + dataReader2.GetValue(13);
                             xlWorkSheet.Cells[row, 14] = "" + dataReader2.GetValue(14);
-                            xlWorkSheet.Cells[row, 15] = "$ " + dataReader2.GetValue(15);
+                            xlWorkSheet.Cells[row, 15] = "₹ " + dataReader2.GetValue(15);
                             xlWorkSheet.Cells[row, 16] = "" + dataReader2.GetValue(16);
                             gl_exrate = Convert.ToDouble(dataReader2.GetValue(18));
                     }
@@ -751,7 +786,7 @@ namespace Surya
             xlWorkSheet.Cells[8, 8] = "Total Setting Charges";
             xlWorkSheet.Cells[8, 10] = gl_set;
             
-            xlWorkBook.SaveAs(path, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            xlWorkBook.SaveAs(path, Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             xlWorkBook.Close(true, misValue, misValue);
             xlApp.Quit();
             releaseObject(xlWorkSheet);
@@ -788,8 +823,14 @@ namespace Surya
 
         private void metroComboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
+            metroLabel4.Text = "";
             MySqlConnection con1 = new MySqlConnection("SERVER=localhost;DATABASE=SilverCity;UID=root;PASSWORD=smhs;");
-            String q1 = "Select descrip from item where code='"+metroComboBox6.SelectedItem.ToString()+"';";
+            string search = "";
+            if (comboBox1.SelectedItem != null)
+                search = comboBox1.SelectedItem.ToString();
+            else
+                search = comboBox1.Text;
+            String q1 = "Select descrip from item where code='"+search+"' and code!='';";
             MySqlCommand cmd1 = new MySqlCommand(q1, con1);
             con1.Open();
             var dataReader1 = cmd1.ExecuteReader();
@@ -797,6 +838,5 @@ namespace Surya
                 metroLabel4.Text = dataReader1.GetValue(0).ToString();
             con1.Close();
         }
-
     }
 }

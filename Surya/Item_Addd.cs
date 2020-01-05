@@ -37,13 +37,13 @@ namespace Surya
             {
                 if (metroTextBox2.Text.Length > 0 && metroComboBox2.SelectedIndex!=-1)
                 {
-                    string FileName = metroLabel4.Text;
-                    byte[] ImageData;
-                    fs = new FileStream(FileName, FileMode.Open, FileAccess.Read);
-                    br = new BinaryReader(fs);
-                    ImageData = br.ReadBytes((int)fs.Length);
-                    br.Close();
-                    fs.Close();
+                    //string FileName = metroLabel4.Text;
+                    //byte[] ImageData;
+                    //fs = new FileStream(FileName, FileMode.Open, FileAccess.Read);
+                    //br = new BinaryReader(fs);
+                    //ImageData = br.ReadBytes((int)fs.Length);
+                    //br.Close();
+                    //fs.Close();
 
 
                     string CmdString = "INSERT INTO Item(code, size, pic, descrip,cate) VALUES(@FirstName, @LastName, @Image, @Address,@cat)";
@@ -51,7 +51,7 @@ namespace Surya
                     
                     cmd.Parameters.AddWithValue("@FirstName", metroTextBox2.Text);
                     cmd.Parameters.AddWithValue("@LastName", metroTextBox1.Text);
-                    cmd.Parameters.AddWithValue("@Image", ImageData);
+                    cmd.Parameters.AddWithValue("@Image", new byte[] { 0x20 });// ImageData);
                     cmd.Parameters.AddWithValue("@Address", metroTextBox3.Text);
                     cmd.Parameters.AddWithValue("@cat", metroComboBox2.SelectedItem.ToString());
 

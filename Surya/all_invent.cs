@@ -238,7 +238,7 @@ namespace Surya
             
             String nm = this.Text;
             
-            String path = @"C:\Silver City\Files\" + nm + ".xls";
+            String path = @"C:\Silver City\Files\" + nm + ".xlsx";
 //            String sel = metroLabel2.Text;
 
             Excel.Application xlApp;
@@ -337,7 +337,7 @@ namespace Surya
             xlWorkSheet.Cells[i + 6, 17] = metroTextBox9.Text;
             xlWorkSheet.Cells[i + 6, 18] = metroTextBox3.Text;
 
-            xlWorkBook.SaveAs(path, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            xlWorkBook.SaveAs(path, Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             xlWorkBook.Close(true, misValue, misValue);
             xlApp.Quit();
             releaseObject(xlWorkSheet);

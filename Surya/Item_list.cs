@@ -12,6 +12,8 @@ using MetroFramework;
 using MySql.Data.MySqlClient;
 using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace Surya
 {
@@ -33,7 +35,7 @@ namespace Surya
             metroGrid2.Rows.Clear();
             metroGrid2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             metroGrid2.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            String query = "Select item.pic,item.descrip,code, size,cate from item;";
+            String query = "Select item.pic,item.descrip,code, size,cate from item order by itemid desc limit 100;";
             MySqlCommand cmd1;
             cmd1 = new MySqlCommand(query, con);
             con.Open();
@@ -42,25 +44,39 @@ namespace Surya
             int row = 0;
             while (dataReader1.Read())
             {
-               
+
                 MemoryStream ms = new MemoryStream();
                 Byte[] bindata;
                 bindata = (byte[])(dataReader1.GetValue(0));
-                ms.Write(bindata, 0, bindata.Length);
-                var imageFile = new Bitmap(ms);
-                var ratioX = (double)100 / imageFile.Width;
-                var ratioY = (double)100 / imageFile.Height;
-                var ratio = Math.Min(ratioX, ratioY);
-                var newWidth = (int)(imageFile.Width * ratio);
-                var newHeight = (int)(imageFile.Height * ratio);
-                var newImage = new Bitmap(newWidth, newHeight);
-                Graphics.FromImage(newImage).DrawImage(imageFile, 0, 0, newWidth, newHeight);
                 int index = this.metroGrid2.Rows.Count;
                 index++;
                 this.metroGrid2.Rows.Add();
+                Image imageFile;
+                Image newImage;
+                if (bindata.Length > 10)
+                {
+                    ms.Write(bindata, 0, bindata.Length);
+                    imageFile = new Bitmap(ms);
+                    var ratioX = (double)100 / imageFile.Width;
+                    var ratioY = (double)100 / imageFile.Height;
+                    var ratio = Math.Min(ratioX, ratioY);
+                    var newWidth = (int)(imageFile.Width * ratio);
+                    var newHeight = (int)(imageFile.Height * ratio);
+                    newImage = new Bitmap(newWidth, newHeight);
+                    Graphics.FromImage(newImage).DrawImage(imageFile, 0, 0, newWidth, newHeight);
+                    ((DataGridViewImageCell)metroGrid2.Rows[row].Cells[2]).Value = newImage;
+                }
+                //else
+                //{
+                //    using (StreamReader file = File.OpenText("config.json"))
+                //    using (JsonTextReader reader = new JsonTextReader(file))
+                //    {
+                //        JObject o2 = (JObject)JToken.ReadFrom(reader);
+                //        newImage = TryAndGetImage(dataReader1, o2);
+                //    }
+                //}
                 (metroGrid2.Rows[row].Cells[0]).Value = row + 1;
                 (metroGrid2.Rows[row].Cells[1]).Value = dataReader1.GetValue(2).ToString();
-                ((DataGridViewImageCell)metroGrid2.Rows[row].Cells[2]).Value = newImage;
                 (metroGrid2.Rows[row].Cells[4]).Value = dataReader1.GetValue(1);
                 (metroGrid2.Rows[row].Cells[3]).Value = dataReader1.GetValue(3).ToString();
                 MySqlConnection con1 = new MySqlConnection("SERVER=localhost;DATABASE=SilverCity;UID=root;PASSWORD=smhs;");
@@ -92,6 +108,35 @@ namespace Surya
             metroComboBox3.SelectedIndex = -1;
             
 
+        }
+
+        private static Image TryAndGetImage(MySqlDataReader dataReader1, JObject o2)
+        {
+            Image imageFile;
+            try
+            {
+                imageFile = System.Drawing.Image.FromFile(o2.GetValue("imageDir").ToString() + "\\" + dataReader1.GetValue(2) + ".png");
+            }
+            catch (Exception)
+            {
+                try
+                {
+                    imageFile = System.Drawing.Image.FromFile(o2.GetValue("imageDir").ToString() + "\\" + dataReader1.GetValue(2) + ".jpg");
+                }
+                catch (Exception)
+                {
+                    try
+                    {
+                        imageFile = System.Drawing.Image.FromFile(o2.GetValue("imageDir").ToString() + "\\" + dataReader1.GetValue(2) + ".jpeg");
+                    }
+                    catch (Exception)
+                    {
+                        imageFile = System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Resources\\default.jpg");
+                    }
+                }
+            }
+
+            return imageFile;
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -210,7 +255,7 @@ namespace Surya
         {
             //String nm = this.Text;
 
-            String path = @"C:\Silver City\Files\Item List.xls";
+            String path = @"C:\Silver City\Files\Item List.xlsx";
             //            String sel = metroLabel2.Text;
 
             Excel.Application xlApp;
@@ -289,7 +334,7 @@ namespace Surya
                 }
             }
 
-            xlWorkBook.SaveAs(path, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            xlWorkBook.SaveAs(path, Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             xlWorkBook.Close(true, misValue, misValue);
             xlApp.Quit();
             releaseObject(xlWorkSheet);

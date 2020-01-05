@@ -546,7 +546,7 @@ namespace Surya
 
         private void metroButton2_Click_1(object sender, EventArgs e)
         {
-            String path = @"C:\Silver City\Files\Metal Inventory.xls";
+            String path = @"C:\Silver City\Files\Metal Inventory.xlsx";
             String sel = metroLabel2.Text;
 
             Excel.Application xlApp;
@@ -692,7 +692,7 @@ namespace Surya
             xlWorkSheet.Cells[i + 9, 3] = "BRONZE :";
             
             
-            xlWorkBook.SaveAs(path, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            xlWorkBook.SaveAs(path, Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             xlWorkBook.Close(true, misValue, misValue);
             xlApp.Quit();
             releaseObject(xlWorkSheet);

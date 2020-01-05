@@ -48,9 +48,10 @@
             // metroButton3
             // 
             this.metroButton3.Highlight = true;
-            this.metroButton3.Location = new System.Drawing.Point(433, 177);
+            this.metroButton3.Location = new System.Drawing.Point(1010, 395);
+            this.metroButton3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(78, 23);
+            this.metroButton3.Size = new System.Drawing.Size(182, 51);
             this.metroButton3.Style = MetroFramework.MetroColorStyle.Red;
             this.metroButton3.TabIndex = 5;
             this.metroButton3.Text = "&RESET";
@@ -62,9 +63,10 @@
             // metroButton2
             // 
             this.metroButton2.Highlight = true;
-            this.metroButton2.Location = new System.Drawing.Point(329, 177);
+            this.metroButton2.Location = new System.Drawing.Point(768, 395);
+            this.metroButton2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(78, 23);
+            this.metroButton2.Size = new System.Drawing.Size(182, 51);
             this.metroButton2.Style = MetroFramework.MetroColorStyle.Green;
             this.metroButton2.TabIndex = 4;
             this.metroButton2.Text = "&SAVE";
@@ -76,26 +78,29 @@
             // metroButton1
             // 
             this.metroButton1.Highlight = true;
-            this.metroButton1.Location = new System.Drawing.Point(45, 234);
+            this.metroButton1.Location = new System.Drawing.Point(105, 522);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(102, 23);
+            this.metroButton1.Size = new System.Drawing.Size(238, 51);
             this.metroButton1.TabIndex = 0;
             this.metroButton1.Text = "&Load Image";
             this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroButton1.UseSelectable = true;
             this.metroButton1.UseStyleColors = true;
+            this.metroButton1.Visible = false;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroTextBox2
             // 
             this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(487, 109);
+            this.metroTextBox2.Location = new System.Drawing.Point(1136, 243);
+            this.metroTextBox2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
             this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.Size = new System.Drawing.Size(139, 23);
+            this.metroTextBox2.Size = new System.Drawing.Size(324, 51);
             this.metroTextBox2.TabIndex = 2;
             this.metroTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.metroTextBox2.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -105,7 +110,8 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(433, 109);
+            this.metroLabel2.Location = new System.Drawing.Point(1010, 243);
+            this.metroLabel2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(48, 19);
             this.metroLabel2.TabIndex = 11;
@@ -116,13 +122,14 @@
             // metroTextBox1
             // 
             this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(242, 109);
+            this.metroTextBox1.Location = new System.Drawing.Point(565, 243);
+            this.metroTextBox1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.Size = new System.Drawing.Size(139, 23);
+            this.metroTextBox1.Size = new System.Drawing.Size(324, 51);
             this.metroTextBox1.TabIndex = 1;
             this.metroTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -132,7 +139,8 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(197, 113);
+            this.metroLabel1.Location = new System.Drawing.Point(460, 252);
+            this.metroLabel1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(39, 19);
             this.metroLabel1.TabIndex = 9;
@@ -143,13 +151,14 @@
             // metroTextBox3
             // 
             this.metroTextBox3.Lines = new string[0];
-            this.metroTextBox3.Location = new System.Drawing.Point(242, 138);
+            this.metroTextBox3.Location = new System.Drawing.Point(565, 308);
+            this.metroTextBox3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '\0';
             this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox3.SelectedText = "";
-            this.metroTextBox3.Size = new System.Drawing.Size(384, 23);
+            this.metroTextBox3.Size = new System.Drawing.Size(896, 51);
             this.metroTextBox3.TabIndex = 3;
             this.metroTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.metroTextBox3.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -159,7 +168,8 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(193, 138);
+            this.metroLabel3.Location = new System.Drawing.Point(450, 308);
+            this.metroLabel3.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(43, 19);
             this.metroLabel3.TabIndex = 16;
@@ -169,17 +179,20 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(23, 75);
+            this.pictureBox1.Location = new System.Drawing.Point(54, 167);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(350, 335);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.metroLabel4.Location = new System.Drawing.Point(256, 60);
+            this.metroLabel4.Location = new System.Drawing.Point(597, 134);
+            this.metroLabel4.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(83, 19);
             this.metroLabel4.TabIndex = 25;
@@ -204,10 +217,11 @@
             "Others",
             "Pendant",
             "Ring"});
-            this.metroComboBox2.Location = new System.Drawing.Point(361, 74);
+            this.metroComboBox2.Location = new System.Drawing.Point(842, 165);
+            this.metroComboBox2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.metroComboBox2.Name = "metroComboBox2";
             this.metroComboBox2.PromptText = "Select Any One";
-            this.metroComboBox2.Size = new System.Drawing.Size(150, 29);
+            this.metroComboBox2.Size = new System.Drawing.Size(345, 29);
             this.metroComboBox2.Sorted = true;
             this.metroComboBox2.TabIndex = 33;
             this.metroComboBox2.UseSelectable = true;
@@ -216,7 +230,8 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(303, 78);
+            this.metroLabel6.Location = new System.Drawing.Point(707, 174);
+            this.metroLabel6.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(43, 19);
             this.metroLabel6.TabIndex = 34;
@@ -225,9 +240,9 @@
             // 
             // Item_Addd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 268);
+            this.ClientSize = new System.Drawing.Size(1514, 598);
             this.Controls.Add(this.metroComboBox2);
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.metroLabel4);
@@ -241,7 +256,9 @@
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.Name = "Item_Addd";
+            this.Padding = new System.Windows.Forms.Padding(47, 134, 47, 45);
             this.Text = "ADD A NEW ITEM";
             this.Load += new System.EventHandler(this.Item_Addd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

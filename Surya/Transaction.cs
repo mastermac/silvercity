@@ -146,7 +146,7 @@ namespace Surya
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            String path = @"C:\Bhandari Soft\Files\Payment Breakup Details.xls";
+            String path = @"C:\Bhandari Soft\Files\Payment Breakup Details.xlsx";
                 Excel.Application xlApp;
                 Excel.Workbook xlWorkBook;
                 Excel.Worksheet xlWorkSheet;
@@ -200,7 +200,7 @@ namespace Surya
                         }
                     }
 
-                xlWorkBook.SaveAs(path, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                xlWorkBook.SaveAs(path, Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
                 xlWorkBook.Close(true, misValue, misValue);
                 xlApp.Quit();
                 releaseObject(xlWorkSheet);

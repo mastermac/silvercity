@@ -11,9 +11,6 @@ using MetroFramework.Forms;
 using MySql.Data.MySqlClient;
 using MetroFramework;
 
-
-
-
 using Excel = Microsoft.Office.Interop.Excel; 
 
 
@@ -130,15 +127,15 @@ namespace Surya
             String sel = metroLabel2.Text;
             if (sel.Equals("1"))
             {
-                path = @"C:\Bhandari Soft\Files\All Transactions.xls";
+                path = @"C:\Bhandari Soft\Files\All Transactions.xlsx";
             }
             else if (sel.Equals("2"))
             {
-                path = @"C:\Bhandari Soft\Files\Pending Transactions.xls";
+                path = @"C:\Bhandari Soft\Files\Pending Transactions.xlsx";
             }
             else if (sel.Equals("4"))
             {
-                path = @"C:\Bhandari Soft\Files\Cleared Transactions.xls";
+                path = @"C:\Bhandari Soft\Files\Cleared Transactions.xlsx";
             }
             
             Excel.Application xlApp;
@@ -231,7 +228,7 @@ namespace Surya
             xlWorkSheet.Cells[i + 3, 12] = metroTextBox2.Text;
 
 
-            xlWorkBook.SaveAs(path, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            xlWorkBook.SaveAs(path, Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             xlWorkBook.Close(true, misValue, misValue);
             xlApp.Quit();
             releaseObject(xlWorkSheet);
